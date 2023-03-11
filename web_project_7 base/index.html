@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Around the U.S</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="./images/Header.svg"
+        alt="Around the U.S"
+      />
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <img
+          class="profile__image"
+          src="./images/profile.jpg"
+          alt="profile header image"
+        />
+        <div class="profile__container">
+          <div class="profile__info">
+            <h1 class="profile__name">Samee Allie</h1>
+            <button
+              class="profile__edit-button"
+              aria-label="Edit"
+              type="button"
+            ></button>
+
+            <p class="profile__title">Software Student</p>
+          </div>
+        </div>
+        <button
+          class="profile__add-button"
+          aria-label="Add"
+          type="button"
+        ></button>
+      </section>
+      <section class="photo-grid">
+        <ul class="photo-grid__cards"></ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">© 2023 Around the U.S</p>
+    </footer>
+
+    <div class="popup">
+      <div class="popup__edit-container">
+        <button
+          type="button"
+          class="popup__close-button popup__close-edit"
+        ></button>
+        <h3 class="popup__title">Edit profile</h3>
+        <form class="popup__form" id="new-card-form" novalidate>
+          <label class="popup__label">
+            <input
+              class="popup__input popup__input_type_title"
+              type="text"
+              id="card-name"
+              name="Title"
+              placeholder="Title"
+              maxlength="40"
+              minlength="2"
+              required
+            />
+            <span class="popup__error" id="card-name-error"></span>
+          </label>
+          <input
+            class="popup__input popup__input_type_description"
+            type="text"
+            name="description"
+            placeholder="Description"
+            id="description-name"
+            minlength="2"
+            maxlength="200"
+            required
+          />
+          <span class="popup__error" id="description-name-error"></span>
+
+          <button class="button popup__button" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup create-popup">
+      <div class="popup__create-container">
+        <button
+          type="button"
+          class="popup__close-button popup__close-create"
+        ></button>
+        <h3 class="popup__title">Add Image</h3>
+        <form class="popup__form" name="new">
+          <input
+            class="popup__input popup__input_type_name"
+            type="text"
+            name="name"
+            placeholder="Name"
+            id="image-name"
+            minlength="1"
+            maxlength="30"
+            required
+          />
+          <span class="popup__error" id="image-name-error"></span>
+          <input
+            class="popup__input popup__input_type_link"
+            type="url"
+            name="link"
+            placeholder="image URL"
+            id="url-link"
+            required
+          />
+          <span class="popup__error" id="url-link-error"></span>
+          <button
+            class="button popup__button popup__button_disabled"
+            type="submit"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup preview-popup">
+      <div class="popup__create-container popup__create-container_preview">
+        <button
+          class="popup__close-button popup__close-button_preview"
+          type="button"
+          aria-label="Close"
+        ></button>
+        <img class="popup__preview-image" src=" " alt=" " />
+        <h3 class="popup__preview-name"></h3>
+      </div>
+    </div>
+    <template id="card-template">
+      <li class="card">
+        <div class="card__image"></div>
+        <button type="button" class="card__delete-button"></button>
+        <div class="card__info">
+          <h2 class="card__title"></h2>
+          <button
+            class="card__like-button"
+            aria-label="Like"
+            type="button"
+          ></button>
+        </div>
+      </li>
+    </template>
+    <script src="./scripts/index.js" type="text/JavaScript" defer></script>
+    <script src="./scripts/validation.js" type="text/JavaScript" defer></script>
+  </body>
+</html>
